@@ -11,6 +11,19 @@ import java.util.List;
 import java.util.Random;
 
 import Week_Eight.Person;
+
+class Pair
+{
+    Person p1;
+    Person p2;
+    public Pair(Person p1, Person p2)
+    {
+        this.p1=p1;
+        this.p2=p2;
+    }
+
+}
+
 //swapped week 6 to 8 
 public class wk6 {
     public static void changeNameToThomas(List<String> names) {
@@ -68,6 +81,19 @@ public class wk6 {
         }
     }
 
+
+    public Pair getMarried(Person p1, Person p2)
+    {
+
+        if(p1.married==false && p2.married==false)
+        {
+            p1.married=true;
+            p2.married=true;
+        }   
+
+        return new Pair(p1, p2);
+    }
+
     public static void main(String[] args) {
         List<String> names = new ArrayList<>();
 
@@ -87,5 +113,7 @@ public class wk6 {
         for (Person person : people) {
             System.out.println(person);
         }
+
+        //marry as many persons as you can & store the pairs of married people into an array of pairs 
     }
 }
